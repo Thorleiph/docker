@@ -1,6 +1,6 @@
 FROM ubuntu:20.04
 
-MAINTAINER Magnus Lindgren "maintainer@sm0tnt.com"
+MAINTAINER Magnus Lindgren "github@sm0tnt.com"
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y dist-upgrade
@@ -11,5 +11,8 @@ RUN pip install uwsgi
 
 RUN useradd --system uwsgi
 
-WORKDIR /opt/uWSGI
+WORKDIR /opt/wsgi
+ADD entrypoint.sh .
+run chmod 755 entrypoint.sh
 
+ENTRYPOINT [ "/entrypoint.sh" ]
