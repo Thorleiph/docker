@@ -12,7 +12,11 @@ RUN pip install uwsgi
 RUN useradd --system uwsgi
 
 WORKDIR /opt/wsgi
-ADD entrypoint.sh .
-run chmod 755 entrypoint.sh
+ADD python_file.py .
+
+WORKDIR /
+
+ADD entrypoint.sh /
+run chmod 755 /entrypoint.sh
 
 ENTRYPOINT [ "/entrypoint.sh" ]
