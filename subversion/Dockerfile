@@ -38,6 +38,7 @@ EXPOSE 80
 
 WORKDIR /
 
+# Writes log messages to the console instead of log files inside the container.
 RUN ln -sf /proc/self/fd/1 /var/log/apache2/access.log && \
     ln -sf /proc/self/fd/1 /var/log/apache2/error.log
 
