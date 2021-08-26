@@ -8,6 +8,8 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get -y dist-upgrade
 RUN apt -y install build-essential python-dev pip nano
 
 RUN pip install uwsgi
+RUN pip install django
+#RUN pip install django-uwsgi
 
 RUN useradd --system uwsgi
 
