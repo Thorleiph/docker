@@ -1,6 +1,6 @@
 
 ## nginx reverse proxy config example with https to nifi
-
+```
 server {
         listen 443 ssl;
         http2 on;
@@ -20,3 +20,4 @@ server {
             proxy_set_header X-ProxiedEntitiesChain "$ssl_client_s_dn";
         }
     }
+```
